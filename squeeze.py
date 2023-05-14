@@ -34,6 +34,7 @@ for filename in os.listdir('datasets'):
     # we can chart individual names below by calling the chart() function
     dataframes[symbol] = df
 
+stock = input("Enter the stock symbol : ")
 
 def chart(df):
     candlestick = go.Candlestick(x=df['Date'], open=df['Open'], high=df['High'], low=df['Low'], close=df['Close'])
@@ -48,5 +49,5 @@ def chart(df):
     fig.layout.xaxis.rangeslider.visible = False
     fig.show()
 
-df = dataframes['GOOGL']
+df = dataframes[stock]
 chart(df)
